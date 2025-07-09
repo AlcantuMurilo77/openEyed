@@ -15,4 +15,4 @@ class Target(Base):
     cnpj = Column(String(14), nullable=True)
     cpf = Column(String(11), nullable=True)
 
-    results = relationship("SearchResults", back_populates="targets")
+    #results = relationship("SearchResults", back_populates="targets")
