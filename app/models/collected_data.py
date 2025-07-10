@@ -9,3 +9,4 @@ class ColectedData(Base):
     value = Column(Text, nullable=False)
     source = Column(String(50), nullable=False)
     reliability = Column(String(50), nullable=False)
+    target = relationship("target", back_populates="colected_data")
