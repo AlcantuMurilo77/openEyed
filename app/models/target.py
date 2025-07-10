@@ -14,5 +14,4 @@ class Target(Base):
     notes = Column(Text, nullable=True)
     cnpj = Column(String(14), nullable=True)
     cpf = Column(String(11), nullable=True)
-
-    #results = relationship("SearchResults", back_populates="targets")
+    collected_data = relationship("CollectedData", back_populates="target", cascade='all, delete')
