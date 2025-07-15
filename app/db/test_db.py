@@ -4,17 +4,13 @@ from sqlalchemy.orm import sessionmaker
 from db.base import Base
 from models.target import Target
 
-# Banco de dados em memória (ideal para testes temporários)
 DATABASE_URL = "sqlite:///:memory:"
 
-# Criação do engine e sessão
 engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Criação das tabelas no banco
 Base.metadata.create_all(bind=engine)
 
-# Função de teste
 def test_insert_and_read():
     db = SessionLocal()
 
